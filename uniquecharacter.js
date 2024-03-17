@@ -1,24 +1,20 @@
-function harUnikaTecken(textstrang) {
-    // Skapa en uppsättning (set) för att hålla reda på unika tecken
-    const unikaTecken = new Set();
+function hasUniqueChar(charString) {
+   
+    const uniqueChar = new Set();
 
-    // Gå igenom varje tecken i strängen
-    for (const tecken of textstrang) {
-        // Om tecknet redan finns i uppsättningen, är det inte unikt
-        if (unikaTecken.has(tecken)) {
+    for (const char of charString) {
+        if (uniqueChar.has(char)) {
             return false;
         }
-        // Annars lägg till det i uppsättningen
-        unikaTecken.add(tecken);
+        uniqueChar.add(char);
     }
 
-    // Om vi har kommit hit, är alla tecken unika
     return true;
 }
 
-// Exempel
-const användarInmatning = prompt("Ange en textsträng: ");
-if (harUnikaTecken(användarInmatning)) {
+const Input = prompt("Ange en textsträng: ");
+let userInput = Input.replace(/\s+/g, '');
+if (hasUniqueChar(userInput)) {
     console.log("Textsträngen innehåller endast unika tecken!");
 } else {
     console.log("Textsträngen innehåller upprepade tecken.");

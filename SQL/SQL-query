@@ -1,0 +1,3 @@
+SELECT Avdelning, COUNT(*) AS Antal_Anstallda
+FROM Medarbetare
+GROUP BY Avdelning;
